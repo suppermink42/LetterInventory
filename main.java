@@ -26,10 +26,18 @@ class main{
 
     }
 
+    public static void convy(){
+        private char ch = 'z';
+        int numericValue = Character.getNumericValue(ch); 
+        System.out.println(numericValue); 
+    
+    }
+
     public static void main(String args[]){
         LetterInventory x;
 
-        bytes();
+        //bytes();
+        convy();
 
         
     }
