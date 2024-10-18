@@ -39,11 +39,12 @@ class main{
             char tempChar = 0;
 
             for(int i = 0; i < data.length(); i++){
-             tempChar = data.charAt(i);
-             tempInt = Character.numericValue(tempChar);
-            
-                alphaKey[tempInt - 10]++;
 
+                tempChar = data.charAt(i);
+                tempInt = Character.getNumericValue(tempChar);
+            
+                //Correct Syntax
+                alphaKey[tempInt - 10]++;
 
             }
 
@@ -59,6 +60,12 @@ class main{
         String mainy = "Hello";
         
         invent(mainy, main);
+
+
+        //True posistion is one less
+        for(int i = 0; i < 26; i++){
+            System.out.println(main[i] + " " + i);
+        }
 
         
     }
