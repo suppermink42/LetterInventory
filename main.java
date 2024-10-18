@@ -27,17 +27,38 @@ class main{
     }
 
     public static void convy(){
-        private char ch = 'z';
+        char ch = 'z';
         int numericValue = Character.getNumericValue(ch); 
         System.out.println(numericValue); 
     
     }
 
+    public static void invent(String data, int alphaKey[]){
+
+            int tempInt = 0;
+            char tempChar = 0;
+
+            for(int i = 0; i < data.length(); i++){
+             tempChar = data.charAt(i);
+             tempInt = Character.numericValue(tempChar);
+            
+                alphaKey[tempInt - 10]++;
+
+
+            }
+
+    }
+
     public static void main(String args[]){
-        LetterInventory x;
+        //LetterInventory x;
 
         //bytes();
-        convy();
+        //convy();
+
+        int main[] = new int[26];
+        String mainy = "Hello";
+        
+        invent(mainy, main);
 
         
     }
