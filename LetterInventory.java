@@ -5,21 +5,18 @@ class LetterInventory{
      private char tempChar;
      private int[] alphaKey = new int[26];
 
-     LetterInventory(String data){
+    LetterInventory(String data){
         this.data = data;
-        
+        lowerData = data.toLowerCase();
 
             for(int i = 0; i < data.length(); i++){
-
-                tempChar = data.charAt(i);
-                tempInt = Character.getNumericValue(tempChar);
-            
-              
-                alphaKey[tempInt - 10]++;
+                letter = lowerData.at(i) - 'a'; 
+                
+                alphaKey[l]++;
 
             }
 
-     }
+    }
 
 
 }
