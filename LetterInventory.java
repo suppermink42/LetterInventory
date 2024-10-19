@@ -1,7 +1,8 @@
 class LetterInventory{
-
-    private String data;
-     private int tempInt = 0;
+ 
+     private String data;
+     private String lowerData;
+     private int letter = 0;
      private char tempChar;
      private int[] alphaKey = new int[26];
 
