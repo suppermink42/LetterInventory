@@ -1,10 +1,13 @@
 class LetterInventory{
      
      private String data;
-     private int tempInt = 0;
+     private String lowerData;
+     private int letter = 0;
      private char tempChar;
      private int[] alphaKey = new int[26];
 
+     
+     /*
      LetterInventory(String data){
         this.data = data;
         
@@ -20,13 +23,23 @@ class LetterInventory{
             }
 
      }
+    */
+
+     LetterInventory(String data){
+        this.data = data;
+        lowerData = data.lowerCase();
+
+            for(int i = 0; i < data.length(); i++){
+                letter = lowerData.at(i) - 'a'; 
+                
+                alphaKey[l]++;
+
+            }
+
+     }
 
      
-    /*
-    public int get(char letter){
-
-    }
-    */
+  
 
     public Boolean isEmpty(){
         if(data == null){
