@@ -27,7 +27,7 @@ class LetterInventory{
 
      LetterInventory(String data){
         this.data = data;
-        lowerData = data.lowerCase();
+        lowerData = data.toLowerCase();
 
             for(int i = 0; i < data.length(); i++){
                 letter = lowerData.at(i) - 'a'; 

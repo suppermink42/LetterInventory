@@ -35,20 +35,21 @@ class main{
 
     public static void invent(String data, int alphaKey[]){
 
-             String lowerData = data;
+             String lowerData = data.toLowerCase();
+             
              int letter = 0;
 
 
 
             for(int i = 0; i < data.length(); i++){
  
-                letter = lowerData.at(i) - 'a'; 
+                letter = lowerData.charAt(i) - 'a'; 
                 
-                alphaKey[l]++;
+                alphaKey[letter]++;
 
             }
 
-            }
+            
 
     }
 
@@ -71,3 +72,5 @@ class main{
 
         
     }
+
+}
