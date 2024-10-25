@@ -45,11 +45,13 @@ class LetterInventory{
 
         }
 
+        if(totalCount > 0){
+            totalCount = totalCount + (value - alphaKey[Character.toLowerCase(letter) - 'a']);
+        }
+        
         alphaKey[Character.toLowerCase(letter) - 'a'] = value;
 
-        if(totalCount > 0){
-            totalCount = totalCount + value;
-        }
+        
      }
 
      public int size(){
