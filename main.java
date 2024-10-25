@@ -54,11 +54,12 @@ class main{
     }
 
     public static void main(String args[]){
-        //LetterInventory x;
+        LetterInventory x = new LetterInventory("Hello");
 
         //bytes();
         //convy();
 
+        /*
         int main[] = new int[26];
         String mainy = "Hello";
         
@@ -69,6 +70,9 @@ class main{
         for(int i = 0; i < 26; i++){
             System.out.println(main[i] + " " + i);
         }
+        */
+
+        System.out.println(x.get('l'));
 
         
     }
