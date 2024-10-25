@@ -31,7 +31,6 @@ class LetterInventory{
 
         return alphaKey[Character.toLowerCase(letter) - 'a'];
 
-        //return alphaKey[letterIndex];
 
      }
 
@@ -48,7 +47,7 @@ class LetterInventory{
         if(totalCount > 0){
             totalCount = totalCount + (value - alphaKey[Character.toLowerCase(letter) - 'a']);
         }
-        
+
         alphaKey[Character.toLowerCase(letter) - 'a'] = value;
 
         
