@@ -18,8 +18,6 @@ class LetterInventory{
                 tempChar = lowerData.charAt(i);
 
                 if(Character.isLetter(tempChar)){
-                    //letterIndex = lowerData.charAt(i) - 'a'; 
-                    //alphaKey[letterIndex]++;
                     alphaKey[lowerData.charAt(i) - 'a']++;
                 }
             }
@@ -47,13 +45,24 @@ class LetterInventory{
 
         }
 
-        alphaKey[Character.toLowerCase(letter) - 'a' ] = value;
+        alphaKey[Character.toLowerCase(letter) - 'a'] = value;
+
+        if(totalCount > 0){
+            totalCount = totalCount + value;
+        }
      }
 
      public int size(){
-        for(int i = 0; i < 26; i++){
+        if(totalCount == 0){
+            for(int i = 0; i < 26; i++){
+                totalCount = alphaKey[i] + totalCount;
+            }
 
+            return totalCount;
         }
+
+        return totalCount;
+
      }
 
      
