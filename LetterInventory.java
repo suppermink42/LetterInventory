@@ -4,6 +4,7 @@ class LetterInventory{
      private String lowerData;
      private int letterIndex = 0;
      private char tempChar;
+     private int totalCount = 0;
      private int[] alphaKey = new int[26];
 
      
@@ -34,8 +35,9 @@ class LetterInventory{
                 tempChar = lowerData.charAt(i);
 
                 if(Character.isLetter(tempChar)){
-                    letterIndex = lowerData.charAt(i) - 'a'; 
-                    alphaKey[letterIndex]++;
+                    //letterIndex = lowerData.charAt(i) - 'a'; 
+                    //alphaKey[letterIndex]++;
+                    alphaKey[lowerData.charAt(i) - 'a']++;
                 }
             }
 
@@ -53,7 +55,22 @@ class LetterInventory{
      }
 
      void set(char letter, int value){
+        if(!Character.isLetter(letter)){
+            throw new IllegalArgumentException("Has to be a letter!");
+        }
 
+        if(value < 0){
+            throw new IllegalArgumentException("Has to be greater than 0");
+
+        }
+
+        alphaKey[Character.toLowerCase(letter) - 'a' ] = value;
+     }
+
+     public int size(){
+        for(int i = 0; i < 26; i++){
+
+        }
      }
 
      
