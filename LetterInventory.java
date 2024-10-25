@@ -2,6 +2,7 @@ class LetterInventory{
      
      private String data;
      private String lowerData;
+     private String toStringData = "[";
      private int letterIndex = 0;
      private char tempChar;
      private int totalCount = 0;
@@ -66,7 +67,11 @@ class LetterInventory{
 
      }
 
-     
+     String toString(){
+         for(int i = 0; i < 26; i++){
+            toStringData = 
+         }
+     }
   
 
     public Boolean isEmpty(){
