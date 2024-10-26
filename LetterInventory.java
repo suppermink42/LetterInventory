@@ -1,8 +1,10 @@
+import java.lang.StringBuilder;
+
+
 class LetterInventory{
      
      private String data;
      private String lowerData;
-     private String toStringData = "[";
      private int letterIndex = 0;
      private char tempChar;
      private int totalCount = 0;
@@ -68,12 +70,17 @@ class LetterInventory{
      }
 
      public String toString(){
-         for(int i = 0; i < 26; i++){
-            toStringData = toStringData + Character.toString(i);
-         }
-         toStringData = toStringData + "]";
+        StringBuilder toStringData = new StringBuilder("[");
 
-         return toStringData;
+         for(int i = 0; i < 26; i++){
+            for(int j = 0; j < alphaKey[i]; j++){
+                toStringData.append((char)('a' + i));
+            }
+         }
+         
+         toStringData.append("]");
+
+         return toStringData.toString();
      }
   
 
