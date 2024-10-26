@@ -92,6 +92,33 @@ class LetterInventory{
         return false;
     }      
 
+    LetterInventory add(LetterInventory other){
+
+        LetterInventory sumInventory = new LetterInventory("");
+
+        for(int i = 0; i < 26; i++){
+            sumInventory.alphaKey[i] = this.alphaKey[i] + other.alphaKey[i];
+        }
+
+        return sumInventory;
+    }
+
+    LetterInventory subtract(LetterInventory other){
+        LetterInventory sumDifference = new LetterInventory("");
+
+        for(int i = 0; i < 26; i++){
+
+            if(other.alphaKey[i] - this.alphaKey[i] > 0){
+                 return null;    
+             }
+            
+            sumDifference.alphaKey[i] = other.alphaKey[i] - this.alphaKey[i];
+        }
+
+        return sumDifference;
+
+
+    }
 
 
 
