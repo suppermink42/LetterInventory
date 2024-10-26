@@ -67,10 +67,13 @@ class LetterInventory{
 
      }
 
-     String toString(){
+     public String toString(){
          for(int i = 0; i < 26; i++){
-            toStringData = 
+            toStringData = toStringData + Character.toString(i);
          }
+         toStringData = toStringData + "]";
+
+         return toStringData;
      }
   
 
