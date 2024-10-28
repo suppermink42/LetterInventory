@@ -22,10 +22,12 @@ class LetterInventory{
 
                 if(Character.isLetter(tempChar)){
                     alphaKey[lowerData.charAt(i) - 'a']++;
+                    totalCount++;
                 }
             }
 
      }
+
 
      public int get(char letter){
         if(!Character.isLetter(letter)){
@@ -47,9 +49,13 @@ class LetterInventory{
 
         }
 
+        /*
         if(totalCount > 0){
             totalCount = totalCount + (value - alphaKey[Character.toLowerCase(letter) - 'a']);
         }
+        */
+        totalCount = totalCount + (value - alphaKey[Character.toLowerCase(letter) - 'a']);
+
 
         alphaKey[Character.toLowerCase(letter) - 'a'] = value;
 
@@ -57,6 +63,7 @@ class LetterInventory{
      }
 
      public int size(){
+        
         if(totalCount == 0){
             for(int i = 0; i < 26; i++){
                 totalCount = alphaKey[i] + totalCount;
@@ -64,6 +71,7 @@ class LetterInventory{
 
             return totalCount;
         }
+        
 
         return totalCount;
 
@@ -85,11 +93,7 @@ class LetterInventory{
   
 
     public Boolean isEmpty(){
-        if(data == null){
-            return true;
-        }
-        
-        return false;
+       return this.size() == 0;
     }      
 
     LetterInventory add(LetterInventory other){
@@ -103,23 +107,47 @@ class LetterInventory{
         return sumInventory;
     }
 
+    /*
     LetterInventory subtract(LetterInventory other){
         LetterInventory sumDifference = new LetterInventory("");
 
         for(int i = 0; i < 26; i++){
 
-            if(other.alphaKey[i] - this.alphaKey[i] > 0){
+            if(other.alphaKey[i] - this.alphaKey[i] < 0){
                  return null;    
              }
             
             sumDifference.alphaKey[i] = other.alphaKey[i] - this.alphaKey[i];
         }
 
+        //sumDifference.totalCount = this.size() - other.size();
+
         return sumDifference;
 
 
     }
+    */
 
+   public LetterInventory subtract(LetterInventory other) {
+    // Create a new LetterInventory to hold the result
+    LetterInventory sumDifference = new LetterInventory("");
 
+    // Loop through all letters ('a' to 'z')
+    for (int i = 0; i < 26; i++) {
+        // Check if subtracting would result in a negative count
+        if (this.alphaKey[i] < other.alphaKey[i]) {
+            return null;  // Return null if any count would be negative
+        }
+
+        // Subtract the counts from 'this' and 'other' for each letter
+        sumDifference.alphaKey[i] = this.alphaKey[i] - other.alphaKey[i];
+    }
+
+    // Update totalCount for the new inventory
+    //sumDifference.totalCount = this.size() - other.size();
+
+    // Return the new inventory with subtracted counts
+    return sumDifference;
+}
 
 }
